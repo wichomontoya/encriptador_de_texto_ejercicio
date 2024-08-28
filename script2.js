@@ -91,7 +91,7 @@ function corregir(){
 // diccionario
 
 const vocal = ["e", "i", "a", "o", "u"];
-const vocalEncriptada = ["kasdj", "oetysb", "qihbd", "1234ss", "iusntos"];
+const vocalEncriptada = ["sdjk", "cbs", "rtj", "ssdf", "plkn"];
 
 /*FUNCION DE ENCRIPTAR*/
 
