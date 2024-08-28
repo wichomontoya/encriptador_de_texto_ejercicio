@@ -19,9 +19,8 @@ const removeAccents = (str) => {
 // COMPORTAMIENTO DE LA PAGINA
 
 function estadoNormal(){
-    label.style.border = " 2px solid #444";
-    label.style.color = "#fc0";
-    ingresarTexto.style.color = "#189";
+    label.style.color = "#0A3871";
+    ingresarTexto.style.color = "#0A3871";
     ingresarTexto.style.border = "2px solid #189";
     btnReparar.style.visibility = "hidden";
     proceder = true
@@ -29,7 +28,6 @@ function estadoNormal(){
 
 function estadoError(){
     label.style.color = "#f00";
-    label.style.border = " 2px solid #f00";
     ingresarTexto.style.color = "#f00";
     ingresarTexto.style.border = "2px solid #fc0";
     btnReparar.style.visibility = "visible";
@@ -39,13 +37,17 @@ function estadoError(){
 /*DESAPARECER IMAGEN*/
 
 function ocultarImagen() {
-    imagen.style.visibility = "hidden";
+    imagen.style.display = "none";
+    msg.style.display = "block"
+    btnCopy.style.display = "block"
 }
 
 /*MOSTRAR IMAGEN*/
 
 function mostrarImagen() {
-    imagen.style.visibility = "visible";
+    imagen.style.display = "block";
+    msg.style.display = "none"
+    btnCopy.style.display = "none"
 }
 
 /*REPARAR TEXTO*/
@@ -76,11 +78,11 @@ function corregir(){
     if(requisitos != cumplir){
         estadoError();
     }
-    
+
     if(requisitos != cumplir2){
         estadoError();
     }
-    
+
     if(requisitos == cumplir2 && requisitos == cumplir){
         estadoNormal();
     }
@@ -99,6 +101,7 @@ function encriptar(){
         for (let i = 0; i < vocal.length; i++) {
             texto = texto.replaceAll(vocal[i], vocalEncriptada[i]);
         }
+
         msg.value = texto;
         if(ingresarTexto.value != ""){
             ocultarImagen();
@@ -139,6 +142,7 @@ function copiar(){
         ingresarTexto.select();
     }
     ingresarTexto.focus();
+     mostrarImagen();
 }
 
 //BOTON DE BORRAR
